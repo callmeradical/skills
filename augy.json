@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "diagnose": "https://github.com/mattpocock/skills/tree/main/skills/engineering/diagnose",
+    "graphify": "https://github.com/safishamsi/graphify/blob/v7/graphify/skill.md",
+    "architecture-review": "https://github.com/mattpocock/skills/tree/main/skills/engineering/improve-codebase-architecture",
+    "commit": "https://github.com/callmeradical/skills/tree/main/skills/commit",
+    "gh-address-comments": "https://github.com/ComposioHQ/awesome-codex-skills/tree/master/gh-address-comments",
+    "grill-with-docs": "https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs",
+    "playwright": "https://github.com/openai/skills/tree/main/skills/.curated/playwright",
+    "prd": "https://github.com/iannuttall/ralph/tree/main/skills/prd",
+    "td-task-management": "marcus/td/td-task-management",
+    "daily-briefing": "https://github.com/callmeradical/skills/tree/main/skills/daily-briefing",
+    "qtip-scenarios": "https://github.com/callmeradical/skills/tree/main/skills/qtip-scenarios",
+    "smith-onboard": "https://github.com/callmeradical/skills/tree/main/skills/smith-onboard"
+  }
+}
