@@ -1,0 +1,58 @@
+name: Nightly Skills Update
+
+on:
+  schedule:
+    - cron: '0 6 * * *'   # 6 AM UTC daily
+  workflow_dispatch:        # allow manual trigger from GitHub UI
+
+jobs:
+  update:
+    name: Check + apply upstream skill updates
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write       # push updated skill files back to this repo
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install augy
+        run: npm install -g @callmeradical/augy
+
+      - name: Configure augy home repo
+        run: augy home set callmeradical/skills
+
+      - name: Install external skills from manifest
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Create a minimal agent directory so augy has somewhere to install skills
+          mkdir -p "$HOME/.opencode/skills"
+          # Sync all externally-sourced skills from the manifest (--yes skips confirmation)
+          augy sync augy.json --agent opencode --yes
+
+      - name: Check and apply upstream updates
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: augy update --all
+
+      - name: Push updated skill files back to home repo
+        run: augy home push
+
+      - name: Commit and push if files changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: nightly skills update [skip ci]"
+            git push
+          fi
