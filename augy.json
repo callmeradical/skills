@@ -30,5 +30,88 @@
     "tdd": "https://github.com/callmeradical/skills/tree/main/skills/tdd",
     "triage": "https://github.com/callmeradical/skills/tree/main/skills/triage",
     "write-a-prd": "https://github.com/callmeradical/skills/tree/main/skills/write-a-prd"
+  },
+  "contexts": {
+    "diagnose": [
+      "universal"
+    ],
+    "architecture-review": [
+      "universal"
+    ],
+    "commit": [
+      "universal"
+    ],
+    "gh-address-comments": [
+      "universal"
+    ],
+    "grill-with-docs": [
+      "universal"
+    ],
+    "playwright": [
+      "universal"
+    ],
+    "prd": [
+      "personal"
+    ],
+    "td-task-management": [
+      "universal"
+    ],
+    "daily-briefing": [
+      "personal"
+    ],
+    "qtip-scenarios": [
+      "universal"
+    ],
+    "smith-onboard": [
+      "universal"
+    ],
+    "ai-resolve": [
+      "personal"
+    ],
+    "copy-editing": [
+      "personal"
+    ],
+    "developmental-edit": [
+      "personal"
+    ],
+    "drive": [
+      "universal"
+    ],
+    "line-edit": [
+      "personal"
+    ],
+    "pipeline-router": [
+      "personal"
+    ],
+    "playtest": [
+      "universal"
+    ],
+    "proofread": [
+      "personal"
+    ],
+    "sensitivity-edit": [
+      "personal"
+    ],
+    "qtip-manifest-helper": [
+      "personal"
+    ],
+    "find-skills": [
+      "universal"
+    ],
+    "improve-codebase-architecture": [
+      "universal"
+    ],
+    "prd-to-issues": [
+      "universal"
+    ],
+    "tdd": [
+      "universal"
+    ],
+    "triage": [
+      "universal"
+    ],
+    "write-a-prd": [
+      "universal"
+    ]
   }
 }
