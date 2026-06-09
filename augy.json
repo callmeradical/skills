@@ -12,6 +12,23 @@
     "td-task-management": "marcus/td/td-task-management",
     "daily-briefing": "https://github.com/callmeradical/skills/tree/main/skills/daily-briefing",
     "qtip-scenarios": "https://github.com/callmeradical/skills/tree/main/skills/qtip-scenarios",
-    "smith-onboard": "https://github.com/callmeradical/skills/tree/main/skills/smith-onboard"
+    "smith-onboard": "https://github.com/callmeradical/skills/tree/main/skills/smith-onboard",
+    "ai-resolve": "https://github.com/callmeradical/skills/tree/main/skills/ai-resolve",
+    "copy-editing": "https://github.com/callmeradical/skills/tree/main/skills/copy-editing",
+    "developmental-edit": "https://github.com/callmeradical/skills/tree/main/skills/developmental-edit",
+    "drive": "https://github.com/callmeradical/skills/tree/main/skills/drive",
+    "line-edit": "https://github.com/callmeradical/skills/tree/main/skills/line-edit",
+    "pipeline-router": "https://github.com/callmeradical/skills/tree/main/skills/pipeline-router",
+    "playtest": "https://github.com/callmeradical/skills/tree/main/skills/playtest",
+    "proofread": "https://github.com/callmeradical/skills/tree/main/skills/proofread",
+    "sensitivity-edit": "https://github.com/callmeradical/skills/tree/main/skills/sensitivity-edit",
+    "tmux-label": "https://github.com/callmeradical/skills/tree/main/skills/tmux-label",
+    "qtip-manifest-helper": "https://github.com/callmeradical/skills/tree/main/skills/qtip-manifest-helper",
+    "find-skills": "https://github.com/callmeradical/skills/tree/main/skills/find-skills",
+    "improve-codebase-architecture": "https://github.com/callmeradical/skills/tree/main/skills/improve-codebase-architecture",
+    "prd-to-issues": "https://github.com/callmeradical/skills/tree/main/skills/prd-to-issues",
+    "tdd": "https://github.com/callmeradical/skills/tree/main/skills/tdd",
+    "triage": "https://github.com/callmeradical/skills/tree/main/skills/triage",
+    "write-a-prd": "https://github.com/callmeradical/skills/tree/main/skills/write-a-prd"
   }
 }

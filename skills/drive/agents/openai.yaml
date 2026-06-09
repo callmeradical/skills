@@ -1,0 +1,4 @@
+interface:
+  display_name: "Drive to Completion"
+  short_description: "Parallel opencode agents in tmux windows"
+  default_prompt: "Drive this project to completion"

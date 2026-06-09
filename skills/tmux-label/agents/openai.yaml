@@ -1,0 +1,4 @@
+interface:
+  display_name: "tmux Session Labeler"
+  short_description: "Label the current tmux session with the AI project name"
+  default_prompt: "Label my current tmux session with the name of the project I'm working on"
