@@ -2,92 +2,36 @@
   "version": 1,
   "skills": {
     "caveman": "https://github.com/mattpocock/skills/tree/main/skills",
-    "design-an-interface": "https://github.com/mattpocock/skills/tree/main/skills",
-    "diagnose": "https://github.com/mattpocock/skills/tree/main/skills",
     "edit-article": "https://github.com/mattpocock/skills/tree/main/skills",
-    "git-guardrails-claude-code": "https://github.com/mattpocock/skills/tree/main/skills",
-    "grill-me": "https://github.com/mattpocock/skills/tree/main/skills",
+    "design-an-interface": "https://github.com/mattpocock/skills/tree/main/skills",
+    "obsidian-vault": "https://github.com/mattpocock/skills/tree/main/skills",
+    "diagnose": "https://github.com/mattpocock/skills/tree/main/skills",
     "grill-with-docs": "https://github.com/mattpocock/skills/tree/main/skills/engineering/grill-with-docs",
+    "to-prd": "https://github.com/mattpocock/skills/tree/main/skills",
+    "git-guardrails-claude-code": "https://github.com/mattpocock/skills/tree/main/skills",
+    "teach": "https://github.com/mattpocock/skills/tree/main/skills",
+    "grill-me": "https://github.com/mattpocock/skills/tree/main/skills",
+    "writing-beats": "https://github.com/mattpocock/skills/tree/main/skills",
+    "review": "https://github.com/mattpocock/skills/tree/main/skills",
+    "prototype": "https://github.com/mattpocock/skills/tree/main/skills",
+    "writing-shape": "https://github.com/mattpocock/skills/tree/main/skills",
+    "scaffold-exercises": "https://github.com/mattpocock/skills/tree/main/skills",
+    "request-refactor-plan": "https://github.com/mattpocock/skills/tree/main/skills",
+    "qa": "https://github.com/mattpocock/skills/tree/main/skills",
+    "prd": "https://github.com/iannuttall/ralph/tree/main/skills/prd",
     "handoff": "https://github.com/mattpocock/skills/tree/main/skills",
     "migrate-to-shoehorn": "https://github.com/mattpocock/skills/tree/main/skills",
-    "obsidian-vault": "https://github.com/mattpocock/skills/tree/main/skills",
-    "prototype": "https://github.com/mattpocock/skills/tree/main/skills",
-    "qa": "https://github.com/mattpocock/skills/tree/main/skills",
-    "request-refactor-plan": "https://github.com/mattpocock/skills/tree/main/skills",
-    "review": "https://github.com/mattpocock/skills/tree/main/skills",
-    "scaffold-exercises": "https://github.com/mattpocock/skills/tree/main/skills",
-    "setup-matt-pocock-skills": "https://github.com/mattpocock/skills/tree/main/skills",
-    "setup-pre-commit": "https://github.com/mattpocock/skills/tree/main/skills",
-    "teach": "https://github.com/mattpocock/skills/tree/main/skills",
-    "to-issues": "https://github.com/mattpocock/skills/tree/main/skills",
-    "to-prd": "https://github.com/mattpocock/skills/tree/main/skills",
-    "ubiquitous-language": "https://github.com/mattpocock/skills/tree/main/skills",
-    "write-a-skill": "https://github.com/mattpocock/skills/tree/main/skills",
-    "writing-beats": "https://github.com/mattpocock/skills/tree/main/skills",
-    "writing-fragments": "https://github.com/mattpocock/skills/tree/main/skills",
-    "writing-shape": "https://github.com/mattpocock/skills/tree/main/skills",
-    "zoom-out": "https://github.com/mattpocock/skills/tree/main/skills",
-    "graphify": "https://github.com/safishamsi/graphify/blob/v7/graphify/skill.md",
-    "td-task-management": "https://github.com/marcus/td/tree/main/td-task-management",
-    "gh-address-comments": "https://github.com/ComposioHQ/awesome-codex-skills/tree/master/gh-address-comments",
     "architecture-review": "https://github.com/mattpocock/skills/tree/main/skills/engineering/improve-codebase-architecture",
-    "prd": "https://github.com/iannuttall/ralph/tree/main/skills/prd",
+    "writing-fragments": "https://github.com/mattpocock/skills/tree/main/skills",
+    "setup-pre-commit": "https://github.com/mattpocock/skills/tree/main/skills",
+    "gh-address-comments": "https://github.com/ComposioHQ/awesome-codex-skills/tree/master/gh-address-comments",
+    "ubiquitous-language": "https://github.com/mattpocock/skills/tree/main/skills",
+    "td-task-management": "https://github.com/marcus/td/tree/main/td-task-management",
+    "setup-matt-pocock-skills": "https://github.com/mattpocock/skills/tree/main/skills",
+    "zoom-out": "https://github.com/mattpocock/skills/tree/main/skills",
+    "write-a-skill": "https://github.com/mattpocock/skills/tree/main/skills",
+    "to-issues": "https://github.com/mattpocock/skills/tree/main/skills",
     "playwright": "https://github.com/openai/skills/tree/main/skills/.curated/playwright",
-    "improve-codebase-architecture": "",
-    "tdd": "",
-    "triage": "",
-    "ai-resolve": "",
-    "commit": "",
-    "copy-editing": "",
-    "daily-briefing": "",
-    "developmental-edit": "",
-    "drive": "",
-    "find-skills": "",
-    "line-edit": "",
-    "pipeline-router": "",
-    "playtest": "",
-    "prd-to-issues": "",
-    "proofread": "",
-    "qtip-manifest-helper": "",
-    "qtip-scenarios": "",
-    "sensitivity-edit": "",
-    "smith-onboard": "",
-    "tmux-label": "",
-    "write-a-prd": ""
-  },
-  "contexts": {
-    "improve-codebase-architecture": [
-      "universal"
-    ],
-    "tdd": [
-      "universal"
-    ],
-    "triage": [
-      "universal"
-    ],
-    "commit": [
-      "universal"
-    ],
-    "drive": [
-      "universal"
-    ],
-    "find-skills": [
-      "universal"
-    ],
-    "playtest": [
-      "universal"
-    ],
-    "prd-to-issues": [
-      "universal"
-    ],
-    "qtip-scenarios": [
-      "universal"
-    ],
-    "smith-onboard": [
-      "universal"
-    ],
-    "write-a-prd": [
-      "universal"
-    ]
+    "graphify": "https://github.com/safishamsi/graphify/blob/v7/graphify/skill.md"
   }
 }
