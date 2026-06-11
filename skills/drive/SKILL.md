@@ -2,7 +2,7 @@
 name: drive
 description: >
   Autonomous multi-agent development orchestrator. Breaks a project goal into
-  parallel workstreams, spawns independent opencode agents in new tmux windows,
+  parallel workstreams, spawns independent goose agents in tmux pane splits,
   each in its own git worktree, and drives the work to completion using TDD and
   td-task-management. Generates a recap summary to the Desktop when done.
   Use when the user says "drive to completion", "drive this", "run this
@@ -14,7 +14,7 @@ description: >
 # drive
 
 Orchestrate autonomous development: label the session, initialise the td sidecar,
-create git worktrees, spawn parallel opencode agents in tmux windows (TDD + tracer
+create git worktrees, spawn parallel goose agents in tmux pane splits (TDD + tracer
 bullets), monitor to completion, then generate a Desktop recap.
 
 ---
@@ -41,8 +41,9 @@ bash ~/.opencode/skills/drive/scripts/check_deps.sh
 
 | Tool | Purpose | Install |
 |---|---|---|
-| `tmux` | Window management for parallel agents | `brew install tmux` |
+| `tmux` | Pane splits for parallel agents | `brew install tmux` |
 | `git` | Worktree isolation per agent | `brew install git` |
+| `goose` | Agent runtime for spawned workers | See [block/goose](https://github.com/block/goose) |
 | `td` CLI | Task tracking sidecar | See [marcus/td](https://github.com/marcus/td) |
 | `augy` | Skill package manager (for fetching deps) | See [anomalyco/augy](https://github.com/anomalyco/augy) |
 
@@ -130,12 +131,18 @@ verb-phrase names ("Implement auth middleware").
 
 ### Step 5 — Create worktrees and spawn agents
 
-Each agent gets its own git worktree (isolated branch, no conflicts).
+Each agent gets its own git worktree (isolated branch, no conflicts) and is
+spawned into a pane split inside a dedicated **`<repo>-drive` tmux session**,
+keeping agents completely separate from your working session. Within that
+session, panes live in an `agents` window (capped at 4 panes). When full, a
+new window is created (`agents-2`, `agents-3`, …). All panes auto-tile to
+equal space. Switch to the drive session at any time with
+`tmux switch-client -t <repo>-drive`.
 
 ```bash
 SKILL=~/.opencode/skills/drive
 
-# Vertical example
+# Vertical example — each call splits the current window into a new pane
 bash "$SKILL/scripts/spawn_agent.sh" \
   --window "auth"   --task-id "td-a1b2" \
   --description "Implement JWT auth middleware with refresh token rotation" \
@@ -157,11 +164,12 @@ bash "$SKILL/scripts/spawn_agent.sh" \
 Use `--dry-run` to preview a prompt before launching.
 
 Each spawned agent is bootstrapped to:
-1. `td usage --new-session` → orient and claim task
-2. Choose vertical or tracer-bullet strategy based on the task
-3. Implement via TDD — one test → minimal code → repeat; refactor only after GREEN
-4. Log decisions and file links throughout
-5. `td handoff` + `td review` when complete
+1. Load the `td-task-management` skill for full command reference
+2. `td usage --new-session` → orient and claim task
+3. Choose vertical or tracer-bullet strategy based on the task
+4. Implement via TDD — one test → minimal code → repeat; refactor only after GREEN
+5. Log decisions, uncertainty, and file links throughout with `td log`
+6. `td handoff` + `td review` when complete
 
 ### Step 6 — Monitor
 
@@ -208,7 +216,7 @@ Options: `--dry-run` (stdout only), `--output <path>`, `--project <name>`.
 
 | Constraint | Reason |
 |---|---|
-| Must be inside tmux | Windows required for parallel agents |
+| Must be inside tmux | Required to create the dedicated `<repo>-drive` session |
 | `td` must be installed | Shared state and session isolation |
 | git repo required for `--worktree` | Isolated branches per agent |
 | Reviewer ≠ implementer | td session isolation enforces this |
@@ -219,7 +227,7 @@ Options: `--dry-run` (stdout only), `--output <path>`, `--project <name>`.
 
 | Script | Purpose |
 |---|---|
-| `scripts/check_deps.sh` | Verify all dependencies; print augy install instructions if missing |
-| `scripts/spawn_agent.sh` | Create tmux window + git worktree, launch opencode agent |
+| `scripts/check_deps.sh` | Verify all dependencies; print install instructions if missing |
+| `scripts/spawn_agent.sh` | Create tmux pane split + git worktree, launch goose agent |
 | `scripts/recap.sh` | Generate session recap markdown to Desktop |
 | `~/.opencode/skills/tmux-label/scripts/label_session.sh` | Label tmux session with project name |

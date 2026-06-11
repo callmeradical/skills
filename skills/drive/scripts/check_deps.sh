@@ -44,6 +44,7 @@ $QUIET || echo "System tools:"
 
 command -v tmux  &>/dev/null && ok "tmux"  || fail "tmux (brew install tmux)"
 command -v git   &>/dev/null && ok "git"   || fail "git  (brew install git)"
+command -v goose &>/dev/null && ok "goose" || fail "goose (see: https://github.com/block/goose)"
 command -v td    &>/dev/null && ok "td (CLI)" || fail "td CLI (see: https://github.com/marcus/td)"
 command -v augy  &>/dev/null && ok "augy"  || warn "augy not found — install instructions below may not apply (https://github.com/anomalyco/augy)"
 
