@@ -47,7 +47,11 @@ jobs:
         run: augy update --all
 
       - name: Push updated skill files back to home repo
-        run: augy home push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global url."https://x-access-token:${GITHUB_TOKEN}@github.com/".insteadOf "https://github.com/"
+          augy home push
 
       - name: Commit and push if files changed
         run: |
