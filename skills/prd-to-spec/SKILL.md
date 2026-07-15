@@ -68,7 +68,58 @@ Translate the PRD's User Stories and solution intent into **testable requirement
 
 If the PRD has an Implementation Decisions section, note it but do not copy it wholesale into specs — extract only the behavioral contracts (what the system SHALL do), leaving the technical choices for `design.md`.
 
-## Step 6 — Validate and report
+## Step 6 — Draft design.md
+
+Run:
+
+```
+openspec instructions --change <name> design
+```
+
+Write `openspec/changes/<name>/design.md` — the How. This is the first place implementation detail belongs. Include:
+
+- **Context** — current state, constraints, what the specs are asking for
+- **Goals / Non-Goals** — what this design achieves and explicitly excludes
+- **Decisions** — key technical choices with rationale (why X over Y, alternatives considered)
+- **Risks / Trade-offs** — known limitations, mitigations
+- **Migration Plan** — deploy steps and rollback strategy if applicable
+- **Open Questions** — unresolved decisions to surface before coding begins
+
+Skip `design.md` only if the change is trivially local to a single module with no architectural decisions.
+
+## Step 7 — Draft tasks.md as tracer bullet vertical slices
+
+Run:
+
+```
+openspec instructions --change <name> tasks
+```
+
+Write `openspec/changes/<name>/tasks.md`. **Do not produce a flat implementation checklist.** Structure the tasks as ordered tracer bullet vertical slices:
+
+- Each numbered group is one **vertical slice** — a thin path through the full stack that produces a working (if minimal) increment of the system.
+- Order slices from the thinnest possible working system outward. The first slice should produce *something* end-to-end: the simplest path that touches every layer.
+- Each slice should be completable in one TDD red-green-refactor cycle.
+- Tasks within a slice run top-to-bottom: write the failing test first, then the implementation.
+
+Example structure:
+```
+## 1. Thinnest working path — <one-line description of the slice>
+
+- [ ] 1.1 Write failing test: <behavior under test>
+- [ ] 1.2 Implement <minimal thing> to make it pass
+- [ ] 1.3 Refactor
+
+## 2. <Next thinnest capability>
+
+- [ ] 2.1 Write failing test: <behavior under test>
+- [ ] 2.2 Implement
+- [ ] 2.3 Refactor
+```
+
+Each slice should map to one or more spec scenarios. Reference the scenario name in the task description where possible.
+
+## Step 8 — Validate and report
 
 Run:
 
@@ -79,6 +130,7 @@ openspec validate --change <name>
 
 Report to the user:
 - Change name and location (`openspec/changes/<name>/`)
-- Artifacts drafted (proposal.md, which spec files)
+- Artifacts drafted: proposal.md, specs, design.md, tasks.md
+- Number of tracer bullet slices and which spec scenarios they cover
 - Any validation warnings
-- Next steps: review and refine specs, then continue to `design` and `tasks` artifacts via `openspec instructions --change <name> design`
+- Next step: review the tasks, then begin implementation slice-by-slice using the **tdd** skill
