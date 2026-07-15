@@ -1,9 +1,11 @@
 ---
 name: write-a-prd
-description: Create a PRD through user interview, codebase exploration, and module design, then submit as a GitHub issue. Use when user wants to write a PRD, create a product requirements document, or plan a new feature.
+description: Create a PRD through user interview, codebase exploration, and module design, then write it to docs/prd/ in the project. Use when user wants to write a PRD, create a product requirements document, or plan a new feature.
 ---
 
 This skill will be invoked when the user wants to create a PRD. You may skip steps if you don't consider them necessary.
+
+**A PRD captures the What and Why — user needs, business goals, success criteria, and constraints. It does not describe implementation. Keep all "How" detail out of the PRD; that belongs in a spec.**
 
 1. Ask the user for a long, detailed description of the problem they want to solve and any potential ideas for solutions.
 
@@ -17,7 +19,7 @@ A deep module (as opposed to a shallow module) is one which encapsulates a lot o
 
 Check with the user that these modules match their expectations. Check with the user which modules they want tests written for.
 
-5. Once you have a complete understanding of the problem and solution, use the template below to write the PRD. The PRD should be submitted as a GitHub issue.
+5. Once you have a complete understanding of the problem and solution, use the template below to write the PRD. Derive a short kebab-case filename from the feature name (e.g. `user-auth.md`). Write the file to `docs/prd/<filename>.md`, creating the `docs/prd/` directory if it does not exist.
 
 <prd-template>
 
