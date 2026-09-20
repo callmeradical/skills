@@ -30,6 +30,7 @@
     "grilling": "https://github.com/mattpocock/skills/tree/main/skills/productivity/grilling",
     "opsgw": "https://github.com/Deloitte-US-Ascend/ascend-arch-smith-ops-gateway/tree/main/.opencode/skills/opsgw",
     "write-a-prd": "callmeradical/skills/skills/write-a-prd",
-    "prd-to-spec": "callmeradical/skills/skills/prd-to-spec"
+    "prd-to-spec": "callmeradical/skills/skills/prd-to-spec",
+    "gauntlet-loop": "callmeradical/skills/skills/gauntlet-loop"
   }
 }
