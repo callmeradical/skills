@@ -28,6 +28,8 @@
     "domain-modeling": "https://github.com/mattpocock/skills/tree/main/skills/engineering/domain-modeling",
     "resolving-merge-conflicts": "https://github.com/mattpocock/skills/tree/main/skills/engineering/resolving-merge-conflicts",
     "grilling": "https://github.com/mattpocock/skills/tree/main/skills/productivity/grilling",
-    "opsgw": "https://github.com/Deloitte-US-Ascend/ascend-arch-smith-ops-gateway/tree/main/.opencode/skills/opsgw"
+    "opsgw": "https://github.com/Deloitte-US-Ascend/ascend-arch-smith-ops-gateway/tree/main/.opencode/skills/opsgw",
+    "write-a-prd": "callmeradical/skills/skills/write-a-prd",
+    "prd-to-spec": "callmeradical/skills/skills/prd-to-spec"
   }
 }
