@@ -17,11 +17,16 @@ Read the full PRD before continuing.
 
 ## Step 2 — Check openspec is initialized
 
-Run `openspec doctor`. If the project is not initialized, run:
+Requires OpenSpec CLI 1.14 or later (`openspec --version`). Upgrade with `npm install -g @fission-ai/openspec@latest`; after upgrading, run `openspec update` in the project to refresh its generated instruction files.
+
+Run `openspec doctor`. If the project is not initialized, run `openspec init` with `--tools` set to the agent you are running in, for example:
 
 ```
-openspec init --tools opencode
+openspec init --tools claude     # Claude Code
+openspec init --tools opencode   # OpenCode
 ```
+
+If `openspec/config.yaml` has `context:` or `rules:` entries, follow them in every artifact you write.
 
 ## Step 3 — Create the change
 
@@ -60,11 +65,13 @@ Read the instructions output carefully. For each capability listed in the propos
 
 Translate the PRD's User Stories and solution intent into **testable requirements**:
 
+- Spec files are **deltas**. Group requirements under a delta header: `## ADDED Requirements` for new capabilities (or `## MODIFIED` / `## REMOVED` / `## RENAMED Requirements` when changing an existing spec; confirm existing capability paths with `openspec list --specs`). Without a delta header, validation fails with "Change must have at least one delta".
 - Each requirement: `### Requirement: <name>` — use SHALL/MUST for normative requirements.
 - Each scenario: `#### Scenario: <name>` — exactly 4 hashtags, WHEN/THEN format.
 - Every requirement MUST have at least one scenario.
 - Specs describe observable behavior through public interfaces — not implementation detail.
 - Draw acceptance criteria directly from the PRD's User Stories: each "As a..., I want..., so that..." maps to one or more requirements and scenarios.
+- If the PRD has a numbered **Acceptance Criteria** section, every criterion MUST be covered by at least one scenario. Cite the criterion id (e.g. `AC-3`) in the requirement or scenario text so a reviewer can trace coverage both ways.
 
 If the PRD has an Implementation Decisions section, note it but do not copy it wholesale into specs — extract only the behavioral contracts (what the system SHALL do), leaving the technical choices for `design.md`.
 
@@ -125,12 +132,15 @@ Run:
 
 ```
 openspec status --change <name>
-openspec validate --change <name>
+openspec validate <name> --type change --strict
 ```
+
+`openspec validate` takes the change name as a positional argument — there is no `--change` flag. Fix every error and re-run until it passes.
 
 Report to the user:
 - Change name and location (`openspec/changes/<name>/`)
 - Artifacts drafted: proposal.md, specs, design.md, tasks.md
 - Number of tracer bullet slices and which spec scenarios they cover
 - Any validation warnings
-- Next step: review the tasks, then begin implementation slice-by-slice using the **tdd** skill
+- PRD acceptance criteria not covered by any scenario (should be none)
+- Next step: review the tasks, then begin implementation slice-by-slice using the **tdd** skill — or the **gauntlet-loop** skill when an independent critic should check the build against the PRD's acceptance criteria and the spec scenarios
