@@ -1,3 +1,8 @@
+---
+name: ai-resolve
+description: Resolves developmental annotations that have been queued for AI action by the author (Book of Challenges).
+---
+
 # AI Resolve Skill — Book of Challenges
 
 Resolves developmental annotations that have been queued for AI action by the author.
